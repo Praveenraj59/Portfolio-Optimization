@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Your Analysis Results</h1>
+        
+        <h2>Predicted Returns</h2>
+        <ul>
+            {% for return_value in analysis['predicted_returns'] %}
+                <li>{{ return_value }}</li>
+            {% endfor %}
+        </ul>
+        
+        <h2>Investment Strategy</h2>
+        <p>Quantum Optimized Solution: {{ strategy['quantum_solution'] }}</p>
+        <p>Optimal Value: {{ strategy['quantum_value'] }}</p>
+        
+        <a class="btn" href="/">Back to Home</a>
+    </div>
+</body>
+</html>

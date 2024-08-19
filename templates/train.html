@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Portfolio Model</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Train Your Portfolio Model</h1>
+        <p>Upload your historical stock and mutual fund data to train the model.</p>
+        <form action="/train" method="post" enctype="multipart/form-data">
+            <label for="stock_data">Stocks Data (CSV):</label>
+            <input type="file" id="stock_data" name="stock_data" required><br>
+
+            <label for="mutual_fund_data">Mutual Funds Data (CSV):</label>
+            <input type="file" id="mutual_fund_data" name="mutual_fund_data" required><br>
+
+            <button class="btn" type="submit">Train Model</button>
+        </form>
+    </div>
+</body>
+</html>
